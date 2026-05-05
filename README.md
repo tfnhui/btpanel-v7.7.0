@@ -28,11 +28,9 @@ rm -f /www/server/panel/data/bind.pl
 ```
 
 3，手动解锁宝塔所有付费插件为永不过期
-
-文件路径：`/www/server/panel/data/plugin.json`
-
-搜索字符串：`"endtime": -1`全部替换为`"endtime": 999999999999`
-
+```
+sed -i 's/"endtime": -1/"endtime": 999999999999/g' /www/server/panel/data/plugin.json
+```
 4，给plugin.json文件上锁防止自动修复为免费版
 
 ```
@@ -46,7 +44,13 @@ chattr +i /www/server/panel/data/plugin.json
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
+============================
 
+！！修复不能下载文件
+
+```
+sed -i 's/add_etags=True,//g' /www/server/panel/BTPanel/__init__.py && sed -i 's/attachment_filename/download_name/g' /www/server/panel/BTPanel/__init__.py && sed -i 's/cache_timeout=0//g' /www/server/panel/BTPanel/__init__.py && bt restart
+```
 ============================
 
 ## Sponsored: EdgeOne
