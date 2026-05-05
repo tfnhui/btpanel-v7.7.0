@@ -52,9 +52,3 @@ sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/serve
 sed -i 's/add_etags=True,//g' /www/server/panel/BTPanel/__init__.py && sed -i 's/attachment_filename/download_name/g' /www/server/panel/BTPanel/__init__.py && sed -i 's/cache_timeout=0//g' /www/server/panel/BTPanel/__init__.py && bt restart
 ```
 ============================
-
-## Sponsored: EdgeOne
-
-[**Best Asian CDN, Edge, and Secure Solutions - Tencent EdgeOne**](https://edgeone.ai/?from=github)
-
-[![Tencent EdgeOne](https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png)](https://edgeone.ai/?from=github)
